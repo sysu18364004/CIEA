@@ -25,7 +25,7 @@ We provide the version file `requirements.txt` of all our used packages, if you 
 
 CIEA is built on [CLIP](https://huggingface.co/openai/clip-vit-base-patch32) and [T5-ANCE](https://huggingface.co/OpenMatch/t5-ance) model.
 
-## Reproduce ciea
+## Reproduce CIEA
 ### Download Code & Dataset
 * First, use `git clone` to download this project:
 ```bash
