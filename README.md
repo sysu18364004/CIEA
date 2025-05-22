@@ -2,7 +2,7 @@
 
 ## Overview
 <p align="center">
-  <img align="middle" src="image/marvel.gif" height="350" alt="MARVEL"/>
+  <img align="middle" src="image/main.png" height="350" alt="CIEA"/>
 </p>
 
 ## Requirement
@@ -29,8 +29,8 @@ CIEA is built on [CLIP](https://huggingface.co/openai/clip-vit-base-patch32) and
 ### Download Code & Dataset
 * First, use `git clone` to download this project:
 ```bash
-# git clone https://github.com/OpenMatch/MARVEL
-# cd CIEA
+git clone https://github.com/sysu18364004/CIEA
+cd CIEA
 ```
 * Download link for our WebQA: [WebQA](https://thunlp.oss-cn-qingdao.aliyuncs.com/UniVLDR/data.zip). (❗️Note: For the ```imgs.tsv```, you need to download the data from [this link](https://drive.google.com/drive/folders/1ApfD-RzvJ79b-sLeBx1OaiPNUYauZdAZ?usp=sharing) and run ```7z x imgs.7z.001```).
 
@@ -57,16 +57,13 @@ data/
 
 ```
 ### Train CIEA-ANCE
-**Using the WebQA dataset as an example, I will show you how to reproduce the results in the CIEA paper. The same is true for the EDIS dataset. Also, we provide the checkpoint for each step. You can skip a step and continue training.**
+**Using the WebQA dataset as an example, I will show you how to reproduce the results in the CIEA paper. The same is true for the EDIS dataset.  You can skip a step and continue training.**
 
 * You can simplily go to the ``DPR`` folder and conduct the ``bash pipeline &gpuid &lambda`` to start or step by step as follow:
 
-* First step: Go to the ``pretrain`` folder and pretrain CIEA's visual module [checkpoint](https://huggingface.co/OpenMatch/marvel-pretrain):
-```
-cd pretrain
-bash train.sh
-```
-* Second step: Go to the ``DPR`` folder and train CIEA-DPR using inbatch negatives [checkpoint](https://huggingface.co/OpenMatch/marvel-dpr-webqa):
+* First step: build the ``pretrain`` folder and download pretrain CIEA's visual module [checkpoint](https://huggingface.co/OpenMatch/marvel-pretrain) provided by MARVEL:
+
+* Second step: Go to the ``DPR`` folder and train CIEA-DPR using inbatch negatives:
 ```
 cd DPR
 bash train_webqa.sh
@@ -75,7 +72,7 @@ bash train_webqa.sh
 ```
 bash get_hn_webqa.sh
 ```
-* Final step: Go to the ``ANCE`` folder and train MARVEL-ANCE using hard negatives [checkpoint](https://huggingface.co/OpenMatch/marvel-ance-webqa): 
+* Final step: Go to the ``ANCE`` folder and train CIEA-ANCE using hard negatives :
 ```
 cd ANCE
 bash train_ance_webqa.sh
